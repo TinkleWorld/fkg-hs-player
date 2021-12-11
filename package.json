@@ -1,0 +1,29 @@
+{
+  "name": "fkg-hs-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config config/webpack.config.dev.js",
+    "publish": "webpack --config config/webpack.config.prod.js"
+  },
+  "keywords": [
+    "fkg",
+    "dmm"
+  ],
+  "author": "https://github.com/Amarillys",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "@pixi-spine/all-3.8": "^3.0.13",
+    "g": "^2.0.1",
+    "md5": "^2.3.0",
+    "pako": "^2.0.4",
+    "pixi.js": "^6.2.0",
+    "webpack": "^5.65.0"
+  }
+}
