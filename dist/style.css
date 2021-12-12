@@ -141,7 +141,7 @@ span {
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) and (orientation: portrait){
   body {
     width: auto;
     margin: 2vw;
@@ -206,5 +206,70 @@ span {
     margin: 3vw;
     font-size: 3vw;
     line-height: 4vw;
+  }
+}
+
+@media screen and (max-width: 1000px) and (orientation: landscape){
+  body {
+    width: auto;
+    margin: 2vw;
+  }
+
+  #logo {
+    top: 6vw;
+  }
+
+  #logo img {
+    max-width: 60vw;
+    max-height: 40vw;
+  }
+
+  #hs-container, #hs-frame, #hs-scene, #hs-spine{
+    width: 60vw;
+    height: 40vw;
+  }
+
+  #hs-dialog {
+    top: 22vw;
+    height: 16vw;
+    width: 56vw;
+  }
+
+  #star-panel {
+    margin: 1rem auto;
+  }
+
+  #star-panel button {
+    font-size: 1.2rem;
+  }
+
+  #charas > div {
+    max-width: 15vw;
+    margin: 12px auto;
+    overflow: hidden;
+  }
+
+  .chara-icon {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  #hs-label {
+    width: 27vw;
+    height: 3.2vw;
+    background-size: cover;
+    top: 20vw;
+    left: 2vw;
+  }
+
+  #hs-label span {
+    font-size: 2vw;
+    line-height: 2.7vw;
+  }
+
+  #hs-dialog > span{
+    margin: 2vw;
+    font-size: 2vw;
+    line-height: 2.7vw;
   }
 }

@@ -10,6 +10,9 @@ export class SpineCG {
     this.width = window.innerWidth
     if (this.width < 1000) {
       this.width = window.innerWidth * 0.96
+      if (Math.abs(window.orientation) === 90) this.width = window.innerWidth * 0.60
+    } else {
+      this.width = 960
     }
     this.app = new PIXI.Application({ width: this.width, height: this.width * 2 / 3 })
     this.inited = false
@@ -31,7 +34,11 @@ export class SpineCG {
       const spineData = spineJsonParser.readSkeletonData(rawSkeletonData)
       this.spine = new Spine(spineData);
       this.inited = true
-      this.spine.scale.set(0.25 / (this.spine.width / 4210) * (this.width / 960))
+      if (this.width < 1000) {
+        this.spine.scale.set(0.25 / (this.spine.width / 4210) * (this.width / 960))
+      } else {
+        this.spine.scale.set(0.25 / (this.spine.width / 4210))
+      }
     }
   }
 
