@@ -1,0 +1,21 @@
+cd = data.charaData
+ce = loadHScene
+
+cd.forEach(d => {
+  if (!d.story) {
+    if (d.id> 400000) d.id = (d.id - 300000) + '_2'
+    ce(d.id).then(story => d.story = story)
+  }
+})
+
+cd.forEach(d => {
+    if (!d.story) {
+    if (d.id> 400000) d.id = (d.id - 300000) + '_2'
+    ce(d.id).then(story => d.story = story)
+    }
+})
+
+cd.forEach(d => {
+    if (!d.story.includes('spine_play')) d.spine = false
+    else d.spine = true
+})
