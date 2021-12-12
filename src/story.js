@@ -58,6 +58,7 @@ export class Story {
     }
     this.resMgr.onload = () => {
       document.getElementById("hs-loading").style.display = "none"
+      this.el.style.opacity = 1
       window.addEventListener("wheel", (evt) => {
         if (evt.target.id === "" || !evt.target.id.startsWith("hs-")) return
         this.pointer += Math.floor(evt.deltaY * 0.01 - 1)

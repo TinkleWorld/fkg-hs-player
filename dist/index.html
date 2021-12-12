@@ -28,14 +28,24 @@
       justify-content: center;
     }
 
-    button {
+    #star-panel button {
       margin: 10px;
-      font-size: 1.3rem;
+      padding: 6px;
       border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: grey;
+      font-size: 1.5rem;
+      box-shadow: 1px 1px 1px green;
     }
 
-    button.activated {
-      background: cornflowerblue;
+    #star-panel button:hover {
+      background: lightpink;
+      box-shadow: none;
+    }
+
+    #star-panel button.activated {
+      background: lightyellow;
     }
     body {
       background-color: rgba(56, 67, 78, 1)
@@ -48,6 +58,7 @@
       z-index: 1;
       display: flex;
       justify-content: center;
+      opacity: 0.5;
     }
 
     #hs-container>div {
@@ -146,7 +157,8 @@
         <button id="star3" class="">☆☆☆</button>
         <button id="star4" class="">☆☆☆☆</button>
         <button id="star5" class="">☆☆☆☆☆</button>
-        <button id="star6" class="activated">☆☆☆☆☆☆</button>
+        <button id="star6" class="">☆☆☆☆☆☆</button>
+        <button id="anime-cg" class="activated">Animation CG</button>
       </div>
       <div id="chara-table">
         <div id="charas">

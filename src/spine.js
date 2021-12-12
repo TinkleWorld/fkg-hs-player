@@ -8,8 +8,6 @@ export class SpineCG {
     this.skeletonURL = skeletonURL
     this.atlasURL = atlasURL
     this.app = new PIXI.Application({ width: 960, height: 640 })
-    this.app.stage.width = 960
-    this.app.stage.height = 640
     this.inited = false
   }
 
@@ -42,11 +40,8 @@ export class SpineCG {
     // play animation
     this.spine.state.setAnimation(0, animationName, isLoop)
   }
-  effect(type) {
-
-  }
-  wait(seconds) {
-  }
+  effect(type) {  }
+  wait(seconds) {  }
 }
 
 function convertFilePath(filename) {
