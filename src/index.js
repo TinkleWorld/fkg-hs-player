@@ -93,6 +93,7 @@ function lazyload() {
 }
 
 function loadHScene(charaId) {
+  document.getElementById('logo').style.display = 'none'
   return new Promise(resolve => {
     fetch(`${window.URL_PREFIX}/event/hscene_r18/${md5(`hscene_r18_${charaId}`)}.bin${window.URL_VER}`)
       .then(res => res.arrayBuffer())
@@ -109,11 +110,9 @@ function loadHScene(charaId) {
  * @param {Story} story 
  */
 function cleanHScene(story) {
-  story.bgmEl.pause()
-  story.bgmEl.currentTime = 0
-  story.voiceEl.pause()
-  story.voiceEl.currentTime = 0
-  document.getElementById('hs-container').style.opacity = 0.5
+  story.unload()
+  document.getElementById('hs-container').style.opacity = 0.7
+  document.getElementById('hs-container').innerHTML = ''
   document.getElementById('hs-container').innerHTML = 
   `<div id="hs-loading"></div>
   <audio id="hs-bgm" src="./bgm/fkg_bgm_hscene001.mp3"></audio>

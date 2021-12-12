@@ -59,15 +59,11 @@ export class Story {
     this.resMgr.onload = () => {
       document.getElementById("hs-loading").style.display = "none"
       this.el.style.opacity = 1
-      window.addEventListener("wheel", (evt) => {
-        if (evt.target.id === "" || !evt.target.id.startsWith("hs-")) return
+      this.wheelEvent = this.el.addEventListener("wheel", (evt) => {
         this.pointer += Math.floor(evt.deltaY * 0.01 - 1)
         this.next()
       })
-      window.addEventListener("click", (evt) => {
-        if (evt.target.id === "" || !evt.target.id.startsWith("hs-")) {
-          return
-        }
+      this.clickEvent = this.el.addEventListener("click", () => {
         if (this.hidden) {
           this.dialogEl.style.opacity = 1
           this.labelEl.style.opacity = 1
@@ -76,10 +72,7 @@ export class Story {
         }
         this.next()
       })
-      window.addEventListener("contextmenu", (evt) => {
-        if (evt.target.id === "" || !evt.target.id.startsWith("hs-")) {
-          return
-        }
+      this.contextEvent = this.el.addEventListener("contextmenu", (evt) => {
         if (this.hidden) {
           this.dialogEl.style.opacity = 1
           this.labelEl.style.opacity = 1
@@ -152,5 +145,18 @@ export class Story {
         break
     }
     if (this.pointer < this.messages.length - 1) this.pointer++
+  }
+
+  unload() {
+    this.bgmEl.pause()
+    this.bgmEl.currentTime = 0
+    this.voiceEl.pause()
+    this.voiceEl.currentTime = 0
+    this.resMgr = null
+    this.message = null
+    this.dynamicCG = null
+    window.removeEventListener('wheel', this.wheelEvent)
+    window.removeEventListener('contextmenu', this.contextEvent)
+    window.removeEventListener('click', this.clickEvent)
   }
 }
