@@ -140,6 +140,10 @@ span {
   overflow: hidden;
 }
 
+#hs-spine canvas {
+  width: 100%;
+}
+
 
 @media screen and (max-width: 1000px) and (orientation: portrait){
   body {
