@@ -65,7 +65,7 @@ body {
   height: 640px;
   position: absolute;
   z-index: 3;
-  background-image: url(https://misuzu.moe/wcp/border.png);
+  background-image: url(./assets/border.png);
   background-size: contain;
 }
 
@@ -86,7 +86,7 @@ body {
   top: 420px;
   left: 120px;
   display: none;
-  background-image: url(https://misuzu.moe/wcp/name.png);
+  background-image: url(./assets/name.png);
   z-index: 5;
   text-align: center;
 }

@@ -1,0 +1,32 @@
+get masterdata from online game.(In indexdb)
+
+function setDataToDef() {
+  const dbName = 'FTbKTVUXG3ZaGMBY'
+  const tableName = 'cache'
+  const key = 'allMasterData'
+  const connection = indexedDB.open(dbName, 1);
+  connection.onsuccess = e => {
+    const db = e.target.result
+    db.transaction(tableName).objectStore(tableName).get(key).onsuccess = function(event) {
+      window.def = event.target.result
+    };
+  }
+}
+
+setDataToDef()
+
+function purify(charaData) {
+  return charaData.split('\n').map(s => ({ id: +s.split(',')[0], name: s.split(',')[5]?.replaceAll('"', ''), star: +s.split(',')[7] }))
+    .filter(s => s.id > 110000)
+    .filter(s => s.id > 410000 || s.id < 200000)
+    .filter(s => s.id % 2 != 0)
+}
+
+window.charaData = purify(window,def.data.masterCharacter)
+copy(JSON.stringify(window.charaData))
+
+And then copy these data into dist/data.json's charaData.
+After that, use tools/download-hscene-story to download all stories for scan animation stories,
+use tools/scan-update-data to scan animation cg
+
+the data.json will be updated.

@@ -14,16 +14,16 @@
   "author": "https://github.com/Amarillys",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.4.1",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
+    "eslint": "^8.34.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@pixi-spine/all-3.8": "^3.0.13",
+    "@pixi-spine/all-3.8": "latest",
     "g": "^2.0.1",
     "md5": "^2.3.0",
-    "pako": "^2.0.4",
-    "pixi.js": "^6.2.0",
-    "webpack": "^5.65.0"
+    "pako": "^2.1.0",
+    "pixi.js": "latest",
+    "webpack": "^5.75.0"
   }
 }
